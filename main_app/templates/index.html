@@ -1,0 +1,31 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shows and Games</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Orbitron|Sanchez" rel="stylesheet">
+</head>
+<body>
+	<h1>Shows and Games</h1>
+	<a href="/shows">Shows</a>
+	<a href="/">Games</a>
+	<table>
+	{% for game in games|dictsort:'name' %}
+		<tr>
+			<td>{{ game.name}}</td>
+
+			{% if game.release == "Out Now" %}
+				<td class="outnow">{{ game.release }}</td>
+
+			{% else %}
+				<td>{{ game.release }}</td>
+
+			{% endif %}
+
+		</tr>
+	{% endfor %}
+	</table>
+</body>       
+</html>

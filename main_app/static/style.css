@@ -1,0 +1,45 @@
+body {
+	background-color: #333;
+}
+
+h1 {
+	color: dodgerblue;
+	font-family: Orbitron;
+	font-size: 40px;
+}
+
+p {
+	font-family: Sanchez;
+	width: 310px;
+	color: #888;
+	font-size: 20px;
+}
+
+td {
+	font-family: Sanchez;
+	width: 310px;
+	color: #888;
+	font-size: 20px;
+}
+
+table {
+	margin-top: 20px;
+}
+
+a {
+	text-decoration: none;
+	margin: 0 10px 0 0;
+	font-family: Sanchez;
+}
+
+a:visited {
+	color: dodgerblue;
+}
+
+a:hover {
+	color: blue;
+}
+
+.outnow {
+	color: green;
+}
