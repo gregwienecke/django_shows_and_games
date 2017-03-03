@@ -1,16 +1,8 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Shows and Games</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-	<link href="https://fonts.googleapis.com/css?family=Orbitron|Sanchez" rel="stylesheet">
-</head>
-<body>
-	<h1>Shows and Games</h1>
-	<a href="/shows">Shows</a>
-	<a href="/">Games</a>
+{% block content %}
+
 	<table>
 	{% for game in games|dictsort:'name' %}
 		<tr>
@@ -26,6 +18,5 @@
 
 		</tr>
 	{% endfor %}
-	</table>
-</body>       
-</html>
+
+{% endblock %}
