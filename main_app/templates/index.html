@@ -2,7 +2,6 @@
 {% load staticfiles %}
 
 {% block content %}
-
 	<table>
 	{% for game in games|dictsort:'name' %}
 		<tr>
@@ -18,5 +17,13 @@
 
 		</tr>
 	{% endfor %}
+	</table>
+
+	<h1>Add Game</h1>
+	<form action="post_url/" method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Submit">
+	</form>
 
 {% endblock %}

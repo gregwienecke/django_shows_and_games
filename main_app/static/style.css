@@ -32,6 +32,13 @@ a {
 	font-family: Sanchez;
 }
 
+button {
+	border: none;
+	background-color: dodgerblue;
+	color: #fff;
+	font-family: Sanchez;
+}
+
 a:visited {
 	color: dodgerblue;
 }
