@@ -32,11 +32,17 @@ a {
 	font-family: Sanchez;
 }
 
-button {
+input[type="submit"]{
 	border: none;
 	background-color: dodgerblue;
 	color: #fff;
 	font-family: Sanchez;
+	padding: 10px 10px 10px 10px;
+}
+
+input[type="submit"]:hover {
+	background-color: blue;
+	cursor: pointer;
 }
 
 a:visited {
