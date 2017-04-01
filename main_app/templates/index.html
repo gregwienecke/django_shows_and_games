@@ -19,11 +19,13 @@
 	{% endfor %}
 	</table>
 
-	<h2 style="color:dodgerblue;font-family:Sanchez">Add Game</h2>
-	<form action="post_url/" method="post">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<input type="submit" value="Submit" >
-	</form>
+	<section>
+		<h2>Add Game</h2>
+		<form action="game_post_url/" method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type="submit" value="Submit" >
+		</form>
+	</section>
 
 {% endblock %}

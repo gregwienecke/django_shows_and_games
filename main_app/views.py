@@ -3,21 +3,15 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 from .models import Game
 from .models import Show
-from .forms import GameForm
+from .forms import GameForm, ShowForm
 
-# Create your views here.
+# GAMES
 def index(request):
 
 	games = Game.objects.all()
 	form = GameForm()
 
 	return render(request, 'index.html', {'games': games, 'form': form})
-
-def shows(request):
-
-	shows = Show.objects.all()
-
-	return render(request, 'shows.html', {'shows': shows})
 
 def post_game(request):
 	form = GameForm(request.POST)
@@ -26,3 +20,20 @@ def post_game(request):
 				    release = form.cleaned_data['release'])
 		game.save()
 	return HttpResponseRedirect('/')
+
+
+# SHOWS
+def shows(request):
+
+	shows = Show.objects.all()
+	form = ShowForm()
+
+	return render(request, 'shows.html', {'shows': shows, 'form': form})
+
+def post_show(request):
+	form = ShowForm(request.POST)
+	if form.is_valid():
+		show = Show(name = form.cleaned_data['name'],
+				    seen = form.cleaned_data['seen'])
+		show.save()
+	return HttpResponseRedirect('/shows')
